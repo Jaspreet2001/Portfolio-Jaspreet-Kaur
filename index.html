@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jaspreet Kaur — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="cursor" id="cursor">
+        <div class="cursor-inner"></div>
+    </div>
+    <div class="cursor-dot" id="cursorDot"></div>
+    <canvas id="particleCanvas"></canvas>
+    <button class="back-to-top" id="backToTop" title="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </button>
+    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+        <span class="ti-dark">🌙</span><span class="ti-light">☀️</span>
+    </button>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-logo">JK<span class="dot">.</span></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#achievements" class="nav-link">Achievements</a></li>
+            <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="hero-bg-orb orb1"></div>
+        <div class="hero-bg-orb orb2"></div>
+        <div class="hero-bg-orb orb3"></div>
+        <div class="hero-content">
+            <div class="hero-badge reveal-up delay-1"><span class="badge-dot"></span> Available for opportunities</div>
+            <h1 class="hero-name reveal-up delay-2">
+                <span class="name-line">Jaspreet</span>
+                <span class="name-line gradient-text">Kaur</span>
+            </h1>
+            <p class="hero-title reveal-up delay-3">
+                <span id="typedText"></span><span class="cursor-blink">|</span>
+            </p>
+            <p class="hero-desc reveal-up delay-4">
+                Full-Stack Developer · CS Educator · ML Enthusiast<br />
+                <span class="muted">Ludhiana, India · CGPA 9.22 </span>
+            </p>
+            <div class="hero-actions reveal-up delay-5">
+                <a href="#projects" class="btn btn-primary ripple-btn">View Projects</a>
+                <a href="#contact" class="btn btn-outline ripple-btn">Get in Touch</a>
+                <a href="#experience" class="btn btn-primary ripple-btn">Experience </a>
+                <!-- <a href="#" class="btn btn-ghost ripple-btn" id="dlResume">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" style="margin-right:6px">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>Resume
+        </a> -->
+            </div>
+            <div class="hero-stats reveal-up delay-6">
+                <div class="stat-item"><span class="stat-num counter" data-target="450">0</span><span
+                        class="stat-num">+</span><span class="stat-label">DSA Solved</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat-item"><span class="stat-num">9.22</span><span class="stat-label">CGPA</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat-item"><span class="stat-num counter" data-target="5">0</span><span
+                        class="stat-num">+</span><span class="stat-label">Work Roles</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat-item"><span class="stat-num counter" data-target="15+">0</span>
+                    <span class="stat-num">+</span><span class="stat-label">Projects</span>
+                </div>
+            </div>
+            <div class="hero-socials reveal-up delay-6" style="margin-bottom: 100px;">
+                <a href="https://github.com/Jaspreet2001" target="_blank" class="social-link" title="GitHub">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/jaspreet-kaur-jawanda-643187202/" target="_blank"
+                    class="social-link" title="LinkedIn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+                    </svg>
+                </a>
+                <a href="https://leetcode.com/u/Jaspreet2001/" target="_blank" class="social-link" title="LeetCode">
+                    <svg width="18" height="18" viewBox="0 0 50 50" fill="currentColor">
+                        <path
+                            d="M29.15 38.21H13.43a2.08 2.08 0 0 1 0-4.16h15.72a2.08 2.08 0 0 1 0 4.16zm8.6-14.47-10.6 10.6a2.08 2.08 0 0 1-2.94-2.94l9.13-9.13-9.13-9.13a2.08 2.08 0 0 1 2.94-2.94l10.6 10.6a2.08 2.08 0 0 1 0 2.94z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">01 / About</span>
+                <h2 class="section-title">Building with <span class="gradient-text">purpose</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal-left">
+                    <p>Computer Science graduate from <strong>Guru Nanak Dev Engineering College</strong> with a 9.22
+                        CGPA.
+                        Currently a CS Lecturer at GNDP College while bringing hands-on industry experience from
+                        full-stack,
+                        frontend, and AI development roles.</p>
+                    <p>Passionate about building scalable systems, accessible multilingual technology, and nurturing the
+                        next
+                        generation of engineers. Active member of <strong>Women Who Code</strong> and the Computer
+                        Society of India.
+                    </p>
+                    <div class="edu-card reveal-up">
+                        <div class="edu-icon">🎓</div>
+                        <div>
+                            <div class="edu-name">Guru Nanak Dev Engineering College</div>
+                            <div class="edu-sub">B.Tech — Computer Science &amp; Engineering · 2020–2024</div>
+                        </div>
+                        <div class="edu-cgpa">9.22 </div>
+
+                    </div>
+                    <div class="fun-ticker reveal-up">
+                        <span class="ticker-label">⚡ Fun fact</span>
+                        <span class="ticker-text" id="tickerText">Solved 450+ DSA problems across platforms</span>
+                    </div>
+                </div>
+                <div class="about-cards reveal-right">
+                    <div class="info-card glass">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <div class="info-label">Location</div>
+                            <div class="info-val">Ludhiana, Punjab, India</div>
+                        </div>
+                    </div>
+                    <div class="info-card glass">
+                        <div class="info-icon">💼</div>
+                        <div>
+                            <div class="info-label">Current Role</div>
+                            <div class="info-val">Lecturer — CS &amp; IT</div>
+                        </div>
+                    </div>
+                    <div class="info-card glass">
+                        <div class="info-icon">🌐</div>
+                        <div>
+                            <div class="info-label">Languages</div>
+                            <div class="info-val">English (IELTS Band 7)</div>
+                        </div>
+                    </div>
+                    <div class="info-card glass">
+                        <div class="info-icon">🏆</div>
+                        <div>
+                            <div class="info-label">Rank</div>
+                            <div class="info-val">Dept. Rank 2 (Sem 1,2,4,5)</div>
+                        </div>
+                    </div>
+                    <div class="info-card glass avail-card" style="grid-column:1/-1">
+                        <div class="avail-pulse"></div>
+                        <div>
+                            <div class="info-label">Status</div>
+                            <div class="info-val">Open to full-time, freelance &amp; collaborations</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section section-dark">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">02 / Experience</span>
+                <h2 class="section-title">Work <span class="gradient-text">Journey</span></h2>
+            </div>
+
+            <div class="timeline">
+
+                <!-- Lecturer -->
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot" style="--dot-color:#a78bfa"></div>
+                    <div class="timeline-card glass">
+                        <div class="tl-header">
+                            <div>
+                                <div class="tl-role">Lecturer — Computer Science & IT</div>
+                                <div class="tl-company">Guru Nanak Dev Polytechnic College · Ludhiana</div>
+                            </div>
+                            <span class="tl-period" style="--period-color:#a78bfa">Jul 2025 – Present</span>
+                        </div>
+                        <p class="tl-desc">
+                            Teaching core subjects including Artificial Intelligence, Machine Learning, Web
+                            Technologies,
+                            Computer Networks, and Computer Architecture with a strong focus on practical and
+                            industry-based learning.
+                            Designing structured lesson plans, conducting hands-on labs, and integrating real-world case
+                            studies.
+                            Actively collaborating with students on AI/ML and full-stack projects, mentoring them in
+                            development,
+                            research, and innovation. Guided students in building projects like:
+                            • <strong>HomeSecure AI:</strong> IoT-based gas, temperature, and air quality monitoring
+                            system using
+                            ESP32, Firebase, and Node.js with real-time alerts and dashboard visualization.
+                            • <strong>SecureCam:</strong> Smart surveillance system with WebRTC live streaming, motion
+                            detection,
+                            alerts, and analytics — awarded <strong>1st Prize at IndoTech 2026 (Science City
+                                Punjab)</strong>.
+                            Providing career guidance, interview preparation, and code reviews to help students
+                            transition into
+                            industry-ready developers.
+                        </p>
+                        <div class="tag-row">
+                            <span class="tag" style="--tc:#a78bfa">AI/ML</span>
+                            <span class="tag" style="--tc:#a78bfa">Computer Architecture</span>
+                            <span class="tag" style="--tc:#a78bfa">Mentoring</span>
+                            <span class="tag" style="--tc:#a78bfa">IoT Projects</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ryazio -->
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-dot" style="--dot-color:#38bdf8"></div>
+                    <div class="timeline-card glass">
+                        <div class="tl-header">
+                            <div>
+                                <div class="tl-role">Software Trainee Engineer</div>
+                                <div class="tl-company">Ryazio Technologies LLP · Ludhiana</div>
+                            </div>
+                            <span class="tl-period" style="--period-color:#38bdf8">Jul 2024 – Jul 2025</span>
+                        </div>
+                        <p class="tl-desc">
+                            Developed scalable full-stack applications using React.js, Node.js, Express, and MongoDB,
+                            focusing on performance, security, and responsive design. Built and integrated RESTful APIs,
+                            optimized backend workflows, and handled database design for real-world applications.
+
+                            Collaborated in agile teams on international client projects, contributing to both frontend
+                            and backend development, debugging, testing, and deployment using Git-based workflows.
+
+                            Worked on key projects including:
+                            • <strong>Wepath (Medical Imaging Platform):</strong> Developed web-based workflows and UI
+                            components for
+                            handling medical data and improving usability.
+                            • <strong>Mazzolari (E-commerce Platform):</strong> Built scalable features, API
+                            integrations, and
+                            optimized frontend performance for a production-level platform.
+                            • <strong>Komen Website:</strong> Contributed to responsive UI and backend integrations for
+                            a global
+                            awareness platform.
+
+                            Also applied Python for data handling and automation tasks, strengthening problem-solving
+                            and system
+                            design skills.
+                        </p>
+                        <div class="tag-row">
+                            <span class="tag" style="--tc:#38bdf8">React.js</span>
+                            <span class="tag" style="--tc:#38bdf8">Node.js</span>
+                            <span class="tag" style="--tc:#38bdf8">MongoDB</span>
+                            <span class="tag" style="--tc:#38bdf8">Python</span>
+                            <span class="tag" style="--tc:#38bdf8">REST APIs</span>
+                            <span class="tag" style="--tc:#38bdf8">Full Stack</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CipherByte -->
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot" style="--dot-color:#34d399"></div>
+                    <div class="timeline-card glass">
+                        <div class="tl-header">
+                            <div>
+                                <div class="tl-role">Web Developer Intern</div>
+                                <div class="tl-company">CipherByte Technologies · Remote</div>
+                            </div>
+                            <span class="tl-period" style="--period-color:#34d399">Jul 2024 – Aug 2024</span>
+                        </div>
+                        <p class="tl-desc">
+                            Built responsive web applications using React.js and Next.js with a focus on performance and
+                            usability.
+                            Developed reusable UI components, integrated APIs, and improved frontend responsiveness
+                            across multiple devices.
+                        </p>
+                        <div class="tag-row">
+                            <span class="tag" style="--tc:#34d399">React.js</span>
+                            <span class="tag" style="--tc:#34d399">Next.js</span>
+                            <span class="tag" style="--tc:#34d399">Frontend</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- InnoByte -->
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-dot" style="--dot-color:#22c55e"></div>
+                    <div class="timeline-card glass">
+                        <div class="tl-header">
+                            <div>
+                                <div class="tl-role">Web Developer Intern</div>
+                                <div class="tl-company">InnoByte Services · Remote</div>
+                            </div>
+                            <span class="tl-period" style="--period-color:#22c55e">Jun 2024 – Jul 2024</span>
+                        </div>
+                        <p class="tl-desc">
+                            Developed MERN stack applications including frontend interfaces and backend APIs.
+                            Worked on database design, authentication systems, and ensured smooth integration
+                            between client and server components.
+                        </p>
+                        <div class="tag-row">
+                            <span class="tag" style="--tc:#22c55e">MERN Stack</span>
+                            <span class="tag" style="--tc:#22c55e">MongoDB</span>
+                            <span class="tag" style="--tc:#22c55e">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nebero -->
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot" style="--dot-color:#fbbf24"></div>
+                    <div class="timeline-card glass">
+                        <div class="tl-header">
+                            <div>
+                                <div class="tl-role">Software Developer Intern</div>
+                                <div class="tl-company">Nebero Systems Pvt. Ltd · Mohali</div>
+                            </div>
+                            <span class="tl-period" style="--period-color:#fbbf24">Jan 2024 – May 2024</span>
+                        </div>
+                        <p class="tl-desc">
+                            Developed and enhanced enterprise-level applications using Vue.js, Vuex, and Vuetify,
+                            focusing on performance, scalability, and responsive UI design. Contributed to multiple
+                            modules including:
+                            • <strong>Email Preview System:</strong> Designed dynamic UI for rendering email templates
+                            with improved
+                            usability.
+                            • <strong>Admin Panel & ERP Modules:</strong> Built dashboards and management interfaces for
+                            enterprise
+                            workflows.
+                            • <strong>Firewall & Security Features:</strong> Assisted in implementing monitoring and
+                            control
+                            mechanisms.
+                            • <strong>VOIP & Communication Systems:</strong> Supported real-time communication features.
+                            • <strong>Matrimonial Platform (Team Lead Role):</strong> Led frontend development by
+                            coordinating with
+                            team members, managing feature implementation, and ensuring smooth API integration.
+                            Actively collaborated in agile teams, handled debugging and testing, and used Git for
+                            version control and
+                            code management.
+                        </p>
+                        <div class="tag-row">
+                            <span class="tag" style="--tc:#fbbf24">Vue.js</span>
+                            <span class="tag" style="--tc:#fbbf24">Vuex</span>
+                            <span class="tag" style="--tc:#fbbf24">Vuetify</span>
+                            <span class="tag" style="--tc:#fbbf24">Team Leadership</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auribises -->
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-dot" style="--dot-color:#fb7185"></div>
+                    <div class="timeline-card glass">
+                        <div class="tl-header">
+                            <div>
+                                <div class="tl-role">Python Trainee</div>
+                                <div class="tl-company">Auribises Technologies Pvt. Ltd · Ludhiana</div>
+                            </div>
+                            <span class="tl-period" style="--period-color:#fb7185">Jul 2022 – Sep 2022</span>
+                        </div>
+                        <p class="tl-desc">
+                            Gained hands-on experience in Python programming and Data Science fundamentals.
+                            Worked on small-scale projects involving data analysis, automation, and problem-solving.
+                        </p>
+                        <div class="tag-row">
+                            <span class="tag" style="--tc:#fb7185">Python</span>
+                            <span class="tag" style="--tc:#fb7185">Data Science</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GSSoC -->
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot" style="--dot-color:#60a5fa"></div>
+                    <div class="timeline-card glass">
+                        <div class="tl-header">
+                            <div>
+                                <div class="tl-role">Open Source Contributor</div>
+                                <div class="tl-company">GirlScript Summer of Code</div>
+                            </div>
+                            <span class="tl-period" style="--period-color:#60a5fa">Feb 2022 – Apr 2022</span>
+                        </div>
+                        <p class="tl-desc">
+                            Contributed to open-source projects by resolving issues, improving UI, and adding features.
+                            Collaborated with global developers using Git and GitHub workflows.
+                        </p>
+                        <div class="tag-row">
+                            <span class="tag" style="--tc:#60a5fa">Open Source</span>
+                            <span class="tag" style="--tc:#60a5fa">GitHub</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sparks -->
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-dot" style="--dot-color:#c084fc"></div>
+                    <div class="timeline-card glass">
+                        <div class="tl-header">
+                            <div>
+                                <div class="tl-role">Web Development Intern</div>
+                                <div class="tl-company">The Sparks Foundation</div>
+                            </div>
+                            <span class="tl-period" style="--period-color:#c084fc">Nov 2021 – Dec 2021</span>
+                        </div>
+                        <p class="tl-desc">
+                            Developed web-based applications and strengthened frontend development skills.
+                            Focused on responsive design, usability, and deployment practices.
+                        </p>
+                        <div class="tag-row">
+                            <span class="tag" style="--tc:#c084fc">Web Dev</span>
+                            <span class="tag" style="--tc:#c084fc">Frontend</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Projects with filter -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">03 / Projects</span>
+                <h2 class="section-title">Things I've <span class="gradient-text">Built</span></h2>
+            </div>
+            <div class="filter-tabs reveal-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">AI / ML</button>
+                <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+                <button class="filter-btn" data-filter="pwa">PWA</button>
+                <button class="filter-btn" data-filter="security">Security</button>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <div class="project-card glass" data-color="#34d399" data-cats="fullstack ai security">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">📷</div><span class="proj-badge">IoT · WebRTC</span>
+                    </div>
+                    <h3 class="project-name">SecureCam</h3>
+                    <p class="project-sub">Smart Camera Security System</p>
+                    <p class="project-desc">
+                        SecureCam is a web-based surveillance system with real-time video streaming (WebRTC),
+                        motion and basic human detection using OpenCV. It supports secure camera connections,
+                        live monitoring, chat, and alerts. Built with Flask, Socket.IO, and SQLite for real-time
+                        communication and secure media handling. <strong>1st Prize — IndoTech 2026</strong>.
+                    </p>
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#34d399">Flask</span>
+                        <span class="tag" style="--tc:#34d399">WebRTC</span>
+                        <span class="tag" style="--tc:#34d399">Socket.IO</span>
+                        <span class="tag" style="--tc:#34d399">OpenCV</span>
+                        <span class="tag" style="--tc:#34d399">SQLite</span>
+                    </div>
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+                        <a href="https://secure-cam.onrender.com/" target="_blank" class="btn btn-outline ripple-btn"
+                            style="font-size:.75rem;padding:.35rem .9rem;">🚀 Live Demo</a>
+                        <a href="https://github.com/Jaspreet2001" target="_blank" class="btn btn-ghost ripple-btn"
+                            style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass" data-color="#60a5fa" data-cats="ai healthcare fullstack">
+                    <div class="project-glow"></div>
+
+                    <div class="project-top">
+                        <div class="project-icon">🧠</div>
+                        <span class="proj-badge">AI · Healthcare · GenAI</span>
+                    </div>
+
+                    <h3 class="project-name">Cortexa Health</h3>
+
+                    <p class="project-sub">
+                        Ultimate Clinical Intelligence Platform (CV + Generative AI)
+                    </p>
+
+                    <p class="project-desc">
+                        A full-stack AI-powered healthcare platform combining computer vision and generative AI
+                        for radiology analysis, drug safety checks, patient monitoring, and clinical decision support.
+                        Features multimodal medical image analysis with attention heatmaps, AI-generated reports,
+                        drug interaction detection, and real-time clinical chat — all integrated into a unified,
+                        role-based system designed for modern hospital workflows.
+                    </p>
+
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#60a5fa">Python</span>
+                        <span class="tag" style="--tc:#60a5fa">Streamlit</span>
+                        <span class="tag" style="--tc:#60a5fa">Computer Vision</span>
+                        <span class="tag" style="--tc:#60a5fa">GenAI</span>
+                        <span class="tag" style="--tc:#60a5fa">LLaMA</span>
+                        <span class="tag" style="--tc:#60a5fa">NumPy</span>
+                    </div>
+
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+
+                        <a href="https://github.com/Jaspreet2001/_Cortexa-Health--AI/issues/3" target="_blank"
+                            class="btn btn-outline ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            🚀 Live Demo
+                        </a>
+
+                        <a href="https://github.com/Jaspreet2001/_Cortexa-Health--AI" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+
+                            GitHub
+                        </a>
+
+                    </div>
+                </div>
+                <div class="project-card glass" data-color="#a78bfa" data-cats="ai">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">🌐</div><span class="proj-badge">AI · NLP</span>
+                    </div>
+                    <h3 class="project-name">TatvaX</h3>
+                    <p class="project-sub">AI Multilingual Learning Platform</p>
+                    <p class="project-desc">
+                        An educational AI platform democratizing learning across 8 Indian languages via a voice-first
+                        architecture.
+                        Built with Flask and custom NLP, it features multi-API fallback translation and context-aware
+                        summarization
+                        to provide personalized subject learning and institutional support, ensuring linguistic
+                        inclusion for
+                        diverse learners.
+                    </p>
+                    <div class="tag-row"><span class="tag" style="--tc:#a78bfa">Flask</span><span class="tag"
+                            style="--tc:#a78bfa">Python</span><span class="tag" style="--tc:#a78bfa">NLP</span><span
+                            class="tag" style="--tc:#a78bfa">NLTK</span></div>
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+                        <a href="https://github.com/Jaspreet2001/TatvaX-AI" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- ================= NEW PROJECT 2 ================= -->
+                <div class="project-card glass" data-color="#60a5fa" data-cats="iot ai fullstack">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">🏠</div>
+                        <span class="proj-badge">IoT · AI · Full Stack</span>
+                    </div>
+                    <h3 class="project-name">HomeSecure AI</h3>
+                    <p class="project-sub">Gas & Temperature Detection System</p>
+                    <p class="project-desc">
+                        HomeSecure AI is an IoT-based system that monitors gas levels, air quality, temperature, and
+                        humidity in
+                        real time using ESP32 and sensors. It detects unsafe conditions and triggers alerts via a buzzer
+                        and live
+                        dashboard. Built with Firebase and Node.js, it provides secure, real-time data visualization and
+                        AQI
+                        insights for safety monitoring.
+
+                    </p>
+
+
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#60a5fa">ESP32</span>
+                        <span class="tag" style="--tc:#60a5fa">Firebase</span>
+                        <span class="tag" style="--tc:#60a5fa">Node.js</span>
+                        <span class="tag" style="--tc:#60a5fa">IoT</span>
+                    </div>
+
+                    <div class="project-links" style="margin-top:1rem;">
+
+                        <a href="https://house-monitoring.onrender.com/" target="_blank"
+                            class="btn btn-outline ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">🚀 Live
+                            Demo</a>
+                        <a href="https://github.com/Jaspreet2001/HomeSecure--AI" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card glass" data-color="#f87171" data-cats="security backend">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">🛡️</div>
+                        <span class="proj-badge">Security · Backend</span>
+                    </div>
+                    <h3 class="project-name">SSH Guardian</h3>
+                    <p class="project-sub">Brute Force Protection System</p>
+                    <p class="project-desc">
+                        SSH Guardian is a real-time security monitoring tool designed
+                        to detect and prevent brute-force attacks on SSH servers. It continuously analyzes system logs,
+                        tracks
+                        failed login attempts, blocks malicious IPs, and generates incident reports.
+                    </p>
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#f87171">Python</span>
+                        <span class="tag" style="--tc:#f87171">Linux</span>
+                        <span class="tag" style="--tc:#f87171">iptables</span>
+                        <span class="tag" style="--tc:#f87171">Cybersecurity</span>
+                    </div>
+                    <div class="project-links" style="margin-top:1rem;">
+
+
+                        <a href="https://github.com/FarRacer098/SSH-GUARDIAN.repo" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass" data-color="#f87171" data-cats="security fullstack">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">🔐</div><span class="proj-badge">Security · Flask</span>
+                    </div>
+                    <h3 class="project-name">Login Trust</h3>
+                    <p class="project-sub">Advanced Phishing Detection Platform</p>
+                    <p class="project-desc">Real-time phishing detection platform analyzing URLs through 24+ security
+                        checks to
+                        generate an interpretable risk score, verdict, and threat breakdown — helping users avoid
+                        credential theft
+                        attacks.</p>
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#f87171">Flask</span>
+                        <span class="tag" style="--tc:#f87171">Python</span>
+                        <span class="tag" style="--tc:#f87171">Bash</span>
+                        <span class="tag" style="--tc:#f87171">Supabase</span>
+                    </div>
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+                        <a href="https://login-trust-6a76.onrender.com/" target="_blank"
+                            class="btn btn-outline ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">🚀 Live
+                            Demo</a>
+                        <a href="https://github.com/Jaspreet2001/Login_Trust" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="project-card glass" data-color="#34d399" data-cats="healthcare ai fullstack database">
+                    <div class="project-glow"></div>
+
+                    <div class="project-top">
+                        <div class="project-icon">🏥</div>
+                        <span class="proj-badge">Healthcare · AI · Full Stack</span>
+                    </div>
+
+                    <h3 class="project-name">Ekk Noor Hospital</h3>
+
+                    <p class="project-sub">
+                        AI-Powered Smart Hospital Management Platform
+                    </p>
+
+                    <p class="project-desc">
+                        Developed an AI-integrated hospital system with symptom-based analysis, doctor recommendation,
+                        and automated
+                        scheduling.
+                        Built for scalable deployment in real-world healthcare environments using PostgreSQL-backed data
+                        management.
+                        Enhances efficiency, reduces manual workload, and improves patient accessibility.
+                    </p>
+
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#34d399">Python</span>
+                        <span class="tag" style="--tc:#34d399">Flask</span>
+                        <span class="tag" style="--tc:#34d399">AI</span>
+                        <span class="tag" style="--tc:#34d399">PostgreSQL</span>
+                        <span class="tag" style="--tc:#34d399">Healthcare</span>
+                        <span class="tag" style="--tc:#34d399">Full Stack</span>
+                    </div>
+
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+
+                        <a href="Doctor.mp4" target="_blank" class="btn btn-outline ripple-btn"
+                            style="font-size:.75rem;padding:.35rem .9rem;">
+                            🎥 Demo Video
+                        </a>
+
+                        <a href="https://github.com/your-username/ekk-noor-hospital" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.30-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.40c1.02 0 2.04.14 3 .40 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.10.81 2.22v3.29c0 .32.22.70.83.58C20.57 21.8 24 17.30 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+
+                            GitHub
+                        </a>
+
+                    </div>
+                </div>
+                <div class="project-card glass" data-color="#a78bfa" data-cats="ai healthcare multimodal research">
+                    <div class="project-glow"></div>
+
+                    <div class="project-top">
+                        <div class="project-icon">🧬</div>
+                        <span class="proj-badge">AI · Multimodal · Research</span>
+                    </div>
+
+                    <h3 class="project-name">OncoDX</h3>
+
+                    <p class="project-sub">
+                        Multimodal Cancer Diagnosis Platform
+                    </p>
+
+                    <p class="project-desc">
+                        Built a multimodal AI system combining gene expression ML and histopathology computer vision for
+                        unified
+                        cancer diagnosis.
+                        Implemented a weighted fusion model (55% genomics, 45% CV) to enhance prediction confidence.
+                        Integrated LLM-based clinical report generation for explainable AI-driven diagnostics.
+                    </p>
+
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#a78bfa">Python</span>
+                        <span class="tag" style="--tc:#a78bfa">Scikit-learn</span>
+                        <span class="tag" style="--tc:#a78bfa">OpenCV</span>
+                        <span class="tag" style="--tc:#a78bfa">HTML</span>
+                        <span class="tag" style="--tc:#a78bfa">LLaMA</span>
+                        <span class="tag" style="--tc:#a78bfa">Multimodal AI</span>
+                    </div>
+
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+
+                        <a href="https://github.com/Jaspreet2001/gene" target="_blank"
+                            class="btn btn-outline ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            🎥 Demo Video
+                        </a>
+
+                        <a href="https://github.com/Jaspreet2001/gene" target="_blank" class="btn btn-ghost ripple-btn"
+                            style="font-size:.75rem;padding:.35rem .9rem;">
+
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.30-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.30-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.40c1.02 0 2.04.14 3 .40 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.10.81 2.22v3.29c0 .32.22.70.83.58C20.57 21.8 24 17.30 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+
+                            GitHub
+                        </a>
+
+                    </div>
+                </div>
+                <div class="project-card glass" data-color="#fb7185" data-cats="ai healthcare ml fullstack">
+                    <div class="project-glow"></div>
+
+                    <div class="project-top">
+                        <div class="project-icon">🩺</div>
+                        <span class="proj-badge">AI · ML · Healthcare</span>
+                    </div>
+
+                    <h3 class="project-name">Multiple Disease Prediction</h3>
+
+                    <p class="project-sub">
+                        AI-Powered Disease Prediction System
+                    </p>
+
+                    <p class="project-desc">
+                        Developed a machine learning-based healthcare system to predict multiple diseases from symptoms
+                        and clinical
+                        inputs.
+                        Implemented and compared Logistic Regression, Random Forest, and XGBoost models for improved
+                        prediction
+                        accuracy.
+                        Designed a fast, privacy-focused interface enabling real-time, local AI-driven health insights.
+                    </p>
+
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#fb7185">Python</span>
+                        <span class="tag" style="--tc:#fb7185">Scikit-learn</span>
+                        <span class="tag" style="--tc:#fb7185">XGBoost</span>
+                        <span class="tag" style="--tc:#fb7185">Streamlit</span>
+                        <span class="tag" style="--tc:#fb7185">Machine Learning</span>
+                        <span class="tag" style="--tc:#fb7185">Healthcare</span>
+                    </div>
+
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+
+                        <a href="https://github.com/Jaspreet2001/Disease-Prediction" target="_blank"
+                            class="btn btn-outline ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            📂 View Project
+                        </a>
+
+                        <a href="https://github.com/Jaspreet2001/Disease-Prediction" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.30-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.30-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.40c1.02 0 2.04.14 3 .40 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.10.81 2.22v3.29c0 .32.22.70.83.58C20.57 21.8 24 17.30 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+
+                            GitHub
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="project-card glass" data-color="#fbbf24" data-cats="pwa ai">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">✅</div><span class="proj-badge">PWA · AI</span>
+                    </div>
+                    <h3 class="project-name">Emoji Task Manager</h3>
+                    <p class="project-sub">AI-Powered PWA</p>
+                    <p class="project-desc">
+                        A mobile-first PWA featuring offline support and experimental AI for smart emoji suggestions.
+                        Built with
+                        React and TypeScript, it integrates native SpeechSynthesis for accessibility, QR-based sharing,
+                        and the Intl
+                        API for localization, offering full JSON data portability and a customizable UI.
+                    </p>
+                    <div class="tag-row"><span class="tag" style="--tc:#fbbf24">React</span><span class="tag"
+                            style="--tc:#fbbf24">TypeScript</span><span class="tag" style="--tc:#fbbf24">Vite</span>
+                    </div>
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+                        <a href="https://github.com/Jaspreet2001/Emoji-Task-Manager" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass" data-color="#f87171" data-cats="ai security">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">🛡️</div><span class="proj-badge">Security · ML</span>
+                    </div>
+                    <h3 class="project-name">IDS using ML</h3>
+                    <p class="project-sub">Intrusion Detection System</p>
+                    <p class="project-desc">Designed an IDS that monitors network traffic and system activity to
+                        identify
+                        potential security threats or unauthorized access attempts. Implemented the IDS using various ML
+                        algorithms
+                        to adapt to new attacks and measured its performance.</p>
+                    <div class="tag-row"><span class="tag" style="--tc:#f87171">Python</span><span class="tag"
+                            style="--tc:#f87171">ML</span><span class="tag" style="--tc:#f87171">Suricata</span><span
+                            class="tag" style="--tc:#f87171">Linux</span></div>
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+                        <a href="https://colab.research.google.com/drive/1yBj91PEykN0lw_0v_hXBoVzPUcxl_4Pm?usp=sharing"
+                            target="_blank" class="btn btn-ghost ripple-btn"
+                            style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass" data-color="#f472b6" data-cats="ai">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">📊</div>
+                        <span class="proj-badge">NLP · Machine Learning</span>
+                    </div>
+                    <h3 class="project-name">Sentiment Analyzer</h3>
+                    <p class="project-sub">Social Media Opinion Mining</p>
+                    <p class="project-desc">
+                        Developed a custom machine learning pipeline to classify public sentiment within large-scale
+                        tweet datasets.
+                        The project involves text noise reduction through regex cleaning and stopword removal, N-gram
+                        tokenization,
+                        and model optimization to achieve high precision in distinguishing between positive and negative
+                        public
+                        discourse.
+                    </p>
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#f472b6">Python</span>
+                        <span class="tag" style="--tc:#f472b6">Jupyter</span>
+                        <span class="tag" style="--tc:#f472b6">NLP</span>
+                        <span class="tag" style="--tc:#f472b6">Pandas</span>
+                    </div>
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+                        <a href="https://github.com/Jaspreet2001/Sentimental_Analysis" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass" data-color="#38bdf8" data-cats="fullstack">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">💬</div><span class="proj-badge">Real-time</span>
+                    </div>
+                    <h3 class="project-name">SNAPPY</h3>
+                    <p class="project-sub">Real-time Chat Application</p>
+
+                    <p class="project-desc">
+                        A MERN-based messaging platform featuring low-latency communication via Socket.IO. It integrates
+                        secure JWT
+                        authentication, avatar customization, and a reactive UI built with styled-components to manage
+                        instant
+                        message delivery and real-time state synchronization.
+                    </p>
+                    <div class="tag-row"><span class="tag" style="--tc:#38bdf8">MERN</span><span class="tag"
+                            style="--tc:#38bdf8">Socket.IO</span><span class="tag" style="--tc:#38bdf8">JWT</span></div>
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+                        <a href="https://github.com/Jaspreet2001/Snappy" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+                <!-- ================= NEW PROJECTS FROM LINKEDIN ================= -->
+
+                <div class="project-card glass" data-color="#34d399" data-cats="ai fullstack">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">🛍️</div>
+                        <span class="proj-badge">ML · E-commerce</span>
+                    </div>
+                    <h3 class="project-name">Ecommerce Recommendation System</h3>
+                    <p class="project-sub">Product Personalization Engine</p>
+                    <p class="project-desc">
+                        Machine learning-based recommendation system using collaborative and content-based filtering to
+                        deliver
+                        personalized product suggestions and enhance user shopping experience.
+                    </p>
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#34d399">Python</span>
+                        <span class="tag" style="--tc:#34d399">ML</span>
+                        <span class="tag" style="--tc:#34d399">Jupyter</span>
+                    </div>
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+
+                        <a href="https://github.com/Jaspreet2001/Ecommerce_Recommendation_System" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass" data-color="#38bdf8" data-cats="fullstack">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">📧</div>
+                        <span class="proj-badge">Frontend · Vue</span>
+                    </div>
+                    <h3 class="project-name">Email Preview & Download</h3>
+                    <p class="project-sub">Admin Panel Enhancement</p>
+                    <p class="project-desc">
+                        Built an email preview and download feature for an admin dashboard using Vue.js, improving email
+                        management
+                        workflow and user experience.
+                    </p>
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#38bdf8">Vue.js</span>
+                        <span class="tag" style="--tc:#38bdf8">JavaScript</span>
+                        <span class="tag" style="--tc:#38bdf8">HTML</span>
+                    </div>
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+
+                        <a href="https://github.com/Jaspreet2001/Email-Preview" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass" data-color="#a78bfa" data-cats="data ai">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">📦</div>
+                        <span class="proj-badge">Data · Analytics</span>
+                    </div>
+                    <h3 class="project-name">Inventory Management Analysis</h3>
+                    <p class="project-sub">Data Optimization System</p>
+                    <p class="project-desc">
+                        Data analysis project optimizing inventory management using SQL and Power BI by analyzing sales
+                        trends and
+                        stock data for better decision-making.
+                    </p>
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#a78bfa">SQL</span>
+                        <span class="tag" style="--tc:#a78bfa">Power BI</span>
+                        <span class="tag" style="--tc:#a78bfa">Data Analysis</span>
+                    </div>
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+
+                        <a href="https://github.com/Jaspreet2001/inventory_management" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass" data-color="#fbbf24" data-cats="data ai">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">🪔</div>
+                        <span class="proj-badge">Data · Python</span>
+                    </div>
+                    <h3 class="project-name">Diwali Sales Analysis</h3>
+                    <p class="project-sub">Customer Insights Project</p>
+                    <p class="project-desc">
+                        Performed exploratory data analysis on Diwali sales data using Python to identify customer
+                        behavior patterns
+                        and improve business sales strategies.
+                    </p>
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#fbbf24">Python</span>
+                        <span class="tag" style="--tc:#fbbf24">EDA</span>
+                        <span class="tag" style="--tc:#fbbf24">Pandas</span>
+                    </div>
+
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+
+                        <a href="https://github.com/Jaspreet2001/Python_Diwali_Sales_Analysis" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass" data-color="#60a5fa" data-cats="ai graphics fullstack">
+
+                    <div class="project-glow"></div>
+
+                    <div class="project-top">
+                        <div class="project-icon">🎬</div>
+                        <span class="proj-badge">AI · Graphics · Full Stack</span>
+                    </div>
+
+                    <h3 class="project-name">Text-to-3D Video Generator</h3>
+                    <p class="project-sub">Natural Language → Cinematic 3D Video Pipeline</p>
+
+                    <p class="project-desc">
+                        An end-to-end AI pipeline that converts text prompts into fully rendered 3D animated videos.
+                        Uses LLM-based scene parsing, AI-driven 3D asset generation (NeRF / Shap-E), and Blender
+                        automation
+                        for scene composition, animation, and video rendering. Designed for scalable, real-time
+                        generation
+                        workflows.
+                    </p>
+
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#60a5fa">Python</span>
+                        <span class="tag" style="--tc:#60a5fa">Blender</span>
+                        <span class="tag" style="--tc:#60a5fa">FastAPI</span>
+                        <span class="tag" style="--tc:#60a5fa">AI/ML</span>
+                        <span class="tag" style="--tc:#60a5fa">Three.js</span>
+                    </div>
+
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap;">
+
+                        <a href="https://github.com/Jaspreet2001/text3d-video" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38..." />
+                            </svg>
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-card glass" data-color="#f472b6" data-cats="ai fullstack">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">✈️</div>
+                        <span class="proj-badge">AI · Travel</span>
+                    </div>
+                    <h3 class="project-name">Voyagease</h3>
+                    <p class="project-sub">AI Travel Companion</p>
+                    <p class="project-desc">
+                        Smart travel platform with itinerary planning, authentication, maps, reminders, and AI-powered
+                        features for
+                        seamless trip management.
+                    </p>
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#f472b6">MERN</span>
+                        <span class="tag" style="--tc:#f472b6">OpenAI</span>
+                        <span class="tag" style="--tc:#f472b6">Maps API</span>
+                    </div>
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+
+                        <a href="https://github.com/Jaspreet2001/voyagease/issues/1" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass" data-color="#8b5cf6" data-cats="ai fullstack">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">📄</div>
+                        <span class="proj-badge">NLP · Python</span>
+                    </div>
+                    <h3 class="project-name">Resume Analyzer</h3>
+                    <p class="project-sub">AI-Powered Candidate Ranking Tool</p>
+                    <p class="project-desc">
+                        A smart recruitment prototype that automates the screening process. Using <strong>TF-IDF
+                            Vectorization</strong> and <strong>Cosine Similarity</strong>, it compares multiple resumes
+                        against job
+                        descriptions to provide a ranked list of top candidates based on technical relevance.
+                    </p>
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#8b5cf6">Python</span>
+                        <span class="tag" style="--tc:#8b5cf6">Flask</span>
+                        <span class="tag" style="--tc:#8b5cf6">Scikit-learn</span>
+                        <span class="tag" style="--tc:#8b5cf6">NLTK</span>
+                    </div>
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+                        <a href="https://github.com/Jaspreet2001/Resume-Analyzer" target="_blank"
+                            class="btn btn-ghost ripple-btn" style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card glass" data-color="#22c55e" data-cats="fullstack">
+                    <div class="project-glow"></div>
+                    <div class="project-top">
+                        <div class="project-icon">✅</div>
+                        <span class="proj-badge">MERN · Firebase</span>
+                    </div>
+                    <h3 class="project-name">TODO App</h3>
+                    <p class="project-sub">Task Management Application</p>
+                    <p class="project-desc">
+                        Full-stack task management app with authentication, CRUD operations, and real-time updates using
+                        MERN stack
+                        and Firebase integration.
+                    </p>
+                    <div class="tag-row">
+                        <span class="tag" style="--tc:#22c55e">React</span>
+                        <span class="tag" style="--tc:#22c55e">Firebase</span>
+                        <span class="tag" style="--tc:#22c55e">MERN</span>
+                    </div>
+                    <div class="project-links" style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+
+                        <a href="https://github.com/Jaspreet2001/todo" target="_blank" class="btn btn-ghost ripple-btn"
+                            style="font-size:.75rem;padding:.35rem .9rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
+                                style="margin-right:4px;vertical-align:middle">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>GitHub
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills with tabs + progress bars -->
+    <section id="skills" class="section section-dark">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">04 / Skills</span>
+                <h2 class="section-title">Tech <span class="gradient-text">Arsenal</span></h2>
+            </div>
+
+            <div class="skills-layout">
+
+                <!-- Tabs -->
+                <div class="skill-tabs reveal-left">
+                    <button class="skill-tab active" data-tab="frontend">Frontend</button>
+                    <button class="skill-tab" data-tab="backend">Backend</button>
+                    <button class="skill-tab" data-tab="ai">AI / Data</button>
+                    <button class="skill-tab" data-tab="tools">Tools</button>
+                </div>
+
+                <!-- Content -->
+                <div class="skill-content-wrap reveal-right">
+
+                    <!-- Frontend -->
+                    <div class="skill-panel active" id="tab-frontend">
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>React.js</span><span>92%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="92" style="--bar-color:#38bdf8"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Vue.js</span><span>88%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="88" style="--bar-color:#34d399"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>HTML5 / CSS3</span><span>95%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="95" style="--bar-color:#f472b6"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>JavaScript / ES6</span><span>90%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="90" style="--bar-color:#fbbf24"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Redux / Vuex</span><span>80%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="80" style="--bar-color:#a78bfa"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Bootstrap / SCSS</span><span>87%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="87" style="--bar-color:#f87171"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Next.js</span><span>82%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="82" style="--bar-color:#000"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Tailwind CSS</span><span>88%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="88" style="--bar-color:#06b6d4"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>TypeScript</span><span>85%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="85" style="--bar-color:#3178c6"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skill-panel" id="tab-backend">
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Node.js</span><span>85%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="85" style="--bar-color:#34d399"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Express.js</span><span>83%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="83" style="--bar-color:#38bdf8"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Flask / Python</span><span>88%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="88" style="--bar-color:#fbbf24"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>MongoDB</span><span>84%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="84" style="--bar-color:#a78bfa"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>MySQL</span><span>78%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="78" style="--bar-color:#f472b6"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>REST APIs</span><span>91%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="91" style="--bar-color:#f87171"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Firebase</span><span>86%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="86" style="--bar-color:#f59e0b"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Socket.IO</span><span>84%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="84" style="--bar-color:#6366f1"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>WebRTC</span><span>80%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="80" style="--bar-color:#10b981"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI / Data -->
+                    <div class="skill-panel" id="tab-ai">
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Python (ML)</span><span>87%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="87" style="--bar-color:#fbbf24"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>NumPy / Pandas</span><span>85%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="85" style="--bar-color:#34d399"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Scikit-learn</span><span>80%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="80" style="--bar-color:#38bdf8"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>NLP / NLTK</span><span>82%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="82" style="--bar-color:#a78bfa"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>OpenAI APIs</span><span>75%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="75" style="--bar-color:#f472b6"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>OpenCV</span><span>83%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="83" style="--bar-color:#ef4444"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Computer Vision</span><span>82%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="82" style="--bar-color:#22c55e"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="skill-panel" id="tab-tools">
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Git / GitHub</span><span>93%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="93" style="--bar-color:#f87171"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Docker</span><span>72%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="72" style="--bar-color:#38bdf8"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Linux</span><span>80%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="80" style="--bar-color:#34d399"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Figma</span><span>78%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="78" style="--bar-color:#fbbf24"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>VS Code</span><span>96%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="96" style="--bar-color:#a78bfa"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Postman</span><span>90%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="90" style="--bar-color:#f97316"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skb-label"><span>Render / Deployment</span><span>85%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="85" style="--bar-color:#0ea5e9"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Tech Cloud -->
+            <div class="tech-cloud reveal-up">
+                <span class="tech-bubble" style="--s:1.2;--c:#a78bfa">C++</span>
+                <span class="tech-bubble" style="--s:1.5;--c:#38bdf8">React</span>
+                <span class="tech-bubble" style="--s:1.3;--c:#34d399">Node.js</span>
+                <span class="tech-bubble" style="--s:1.1;--c:#fbbf24">Python</span>
+                <span class="tech-bubble" style="--s:1.4;--c:#f472b6">Vue.js</span>
+                <span class="tech-bubble" style="--s:1.0;--c:#f87171">MongoDB</span>
+                <span class="tech-bubble" style="--s:1.2;--c:#a78bfa">Flask</span>
+                <span class="tech-bubble" style="--s:1.6;--c:#38bdf8">JavaScript</span>
+                <span class="tech-bubble" style="--s:1.1;--c:#34d399">Docker</span>
+                <span class="tech-bubble" style="--s:1.3;--c:#fbbf24">ML</span>
+                <span class="tech-bubble" style="--s:1.0;--c:#f472b6">Linux</span>
+                <span class="tech-bubble" style="--s:1.2;--c:#f87171">Git</span>
+                <span class="tech-bubble" style="--s:1.3;--c:#f59e0b">Firebase</span>
+                <span class="tech-bubble" style="--s:1.2;--c:#10b981">WebRTC</span>
+                <span class="tech-bubble" style="--s:1.4;--c:#6366f1">Socket.IO</span>
+                <span class="tech-bubble" style="--s:1.1;--c:#ef4444">OpenCV</span>
+                <span class="tech-bubble" style="--s:1.2;--c:#06b6d4">Tailwind</span>
+                <span class="tech-bubble" style="--s:1.1;--c:#000">Next.js</span>
+                <span class="tech-bubble" style="--s:1.3;--c:#3178c6">TypeScript</span>
+            </div>
+
+        </div>
+    </section>
+    <!-- Achievements -->
+    <section id="achievements" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">05 / Achievements</span>
+                <h2 class="section-title">Honors &amp; <span class="gradient-text">Certs</span></h2>
+            </div>
+            <div class="achieve-grid">
+                <div class="achieve-card glass reveal-up delay-1" data-type="award">
+                    <div class="achieve-icon">🏅</div>
+                    <div class="achieve-title">AIEESE Scholarship Holder</div>
+                    <div class="achieve-type">Award</div>
+                </div>
+                <div class="achieve-card glass reveal-up delay-2" data-type="award">
+                    <div class="achieve-icon">✨</div>
+                    <div class="achieve-title">Girlscript Outreach Scholar</div>
+                    <div class="achieve-type">Award</div>
+                </div>
+                <div class="achieve-card glass reveal-up delay-3" data-type="academic">
+                    <div class="achieve-icon">🥈</div>
+                    <div class="achieve-title">Department Rank 2</div>
+                    <div class="achieve-type">Sem 1, 2, 4, 5</div>
+                </div>
+                <div class="achieve-card glass reveal-up delay-1" data-type="award">
+                    <div class="achieve-icon">🔬</div>
+                    <div class="achieve-title">Science Olympiad Winner</div>
+                    <div class="achieve-type">Award</div>
+                </div>
+                <div class="achieve-card glass reveal-up delay-2" data-type="coding">
+                    <div class="achieve-icon">💻</div>
+                    <div class="achieve-title">450+ DSA Problems Solved</div>
+                    <div class="achieve-type">Coding</div>
+                </div>
+                <div class="achieve-card glass reveal-up delay-3" data-type="cert">
+                    <div class="achieve-icon">✅</div>
+                    <div class="achieve-title">HackerRank Problem Solving</div>
+                    <div class="achieve-type">Certificate</div>
+                </div>
+                <div class="achieve-card glass reveal-up delay-1" data-type="cert">
+                    <div class="achieve-icon">🤖</div>
+                    <div class="achieve-title">Infosys AI Primer</div>
+                    <div class="achieve-type">Certificate</div>
+                </div>
+                <div class="achieve-card glass reveal-up delay-2" data-type="cert">
+                    <div class="achieve-icon">🎓</div>
+                    <div class="achieve-title">C, C++ &amp; Adv C++ — IIT Bombay</div>
+                    <div class="achieve-type">Certificate</div>
+                </div>
+                <div class="achieve-card glass reveal-up delay-3" data-type="cert">
+                    <div class="achieve-icon">🌍</div>
+                    <div class="achieve-title">IELTS — Band 7</div>
+                    <div class="achieve-type">Certificate</div>
+                </div>
+            </div>
+            <div class="community-strip reveal-up glass">
+                <span class="comm-label">Community</span>
+                <span class="comm-item">Women Who Code</span><span class="comm-sep">·</span>
+                <span class="comm-item">WomenTech Network</span><span class="comm-sep">·</span>
+                <span class="comm-item">Computer Society of India</span><span class="comm-sep">·</span>
+                <span class="comm-item">Data Science Club</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact with form -->
+    <section id="contact" class="section section-dark">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">06 / Contact</span>
+                <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+            </div>
+
+            <p class="contact-intro reveal-up">
+                Open to opportunities, collaborations, and meaningful tech discussions.
+            </p>
+
+            <!-- GRID -->
+            <div class="contact-grid reveal-up">
+
+                <!-- Email -->
+                <div class="contact-card glass">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-label">Email</div>
+                    <a href="mailto:jaspreetjawanda06@gmail.com" class="contact-val">
+                        jaspreetjawanda06@gmail.com
+                    </a>
+                </div>
+
+                <!-- Phone -->
+                <div class="contact-card glass">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-label">Phone</div>
+                    <a href="tel:+918283946823" class="contact-val">
+                        +91 8283946823
+                    </a>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="contact-card glass">
+                    <div class="contact-icon">💼</div>
+                    <div class="contact-label">LinkedIn</div>
+                    <a href="https://www.linkedin.com/in/jaspreet-kaur-jawanda-643187202/" target="_blank"
+                        class="contact-val">
+                        View Profile →
+                    </a>
+                </div>
+
+                <!-- GitHub -->
+                <div class="contact-card glass">
+                    <div class="contact-icon">🐙</div>
+                    <div class="contact-label">GitHub</div>
+                    <a href="https://github.com/Jaspreet2001" target="_blank" class="contact-val">
+                        View Projects →
+                    </a>
+                </div>
+
+                <!-- Resume -->
+                <div class="contact-card glass">
+                    <div class="contact-icon">📄</div>
+                    <div class="contact-label">Resume</div>
+                    <a href="https://drive.google.com/file/d/12q0wAlr-ZZP6GwC5piWrzqIbwCUrOHCk/view?usp=sharing"
+                        target="_blank" class="contact-val">
+                        Download ↓
+                    </a>
+                </div>
+
+                <!-- Location -->
+                <div class="contact-card glass">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-label">Location</div>
+                    <span class="contact-val">Ludhiana, Punjab, India</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="footer-name">Jaspreet Kaur</span>
+            <div class="footer-socials">
+                <a href="https://github.com/Jaspreet2001" target="_blank" class="social-link sm"><svg width="16"
+                        height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                    </svg></a>
+                <a href="https://linkedin.com/in/jaspreet-kaur-jawanda-643187202/" target="_blank"
+                    class="social-link sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+                    </svg></a>
+            </div>
+            <span class="footer-copy">Designed &amp; built with ♥ · 2025</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
